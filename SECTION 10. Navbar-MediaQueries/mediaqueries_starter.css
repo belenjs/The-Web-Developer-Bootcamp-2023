@@ -1,0 +1,67 @@
+/* Dentro de CSS se va a realizar un efecto degradado en el h1 para que según vaya cambiando de tamaño,
+por tramos, el color del texto también cambie. */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 6em;
+    text-align: center;
+    color: black;
+}
+
+nav {
+    font-size: 1.5em;
+    display: flex; /* Al estar divida en tres partes y haciendo que el nav sea flexible
+    se pueden controlar los tres elementos y moverlos a nuestro antojo. */
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul, li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul { /* Para darle a los elementos intermedios un contenedor flexible, y que se organicen de manera espaciada entre ellos, en todo momento */
+    flex:1;
+    max-width: 50%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+@media (min-width: 500px){ 
+    h1 {
+        color: rgb(57, 31, 108);
+    }
+}
+
+@media (min-width: 1000px){ 
+    h1 {
+        color: rgb(119, 89, 179);
+    }
+}
+
+@media (min-width: 1500px){ 
+    h1 {
+        color: rgb(186, 169, 221);
+    }
+}
+
+
+@media (max-width: 768px) { /* Se pretende que cuando alcance este tamaño máximo, el tamaño de la letra disminuya */
+    h1 {
+        font-size: 4em;
+    }
+    nav, nav ul {
+        flex-direction: column; /* Cuando llegue a ese tamaño, los elementos que están en el navbar, se colocarán uno debajo del otro. */
+        align-items: center;
+    }
+}
+
+@media (max-wodth: 576px) {
+    h1 {
+        font-size:3em;
+    }
+}
