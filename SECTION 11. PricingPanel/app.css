@@ -1,0 +1,171 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+    box-sizing:border-box;
+    font-family: 'Monserrat', sans-serif;
+}
+
+body { 
+    background-color: rgb(232, 102, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.panel { /* Se le proporciona el tamaño al panel y que esté centrado */
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 25px; /* para espaciar el contenido de dentro del panel con su borde */
+    width: 100%;
+    max-width: 960px; /* nunca más ancho que esto para que siempre esté centrado */
+    display: flex; /* por defecto se coloca en fila */
+    flex-direction: column; /* porque queremos que trabaje con columna cuando el tamaño es de dispositivo móvil */
+    text-align: center;
+    text-transform: uppercase; /* todo el texto del panel, en mayúsculas */
+}
+
+/* Se coloca un borde al final de cada sección para crear una division entre ellas, salvo en el último bloque. */
+.pricing-plan { 
+    border-bottom: 1px solid rgb(228, 169, 141);
+}
+
+.pricing-plan:last-child {
+    border-bottom: none;
+}
+
+
+.pricing-img {
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Se le da estilo a los header: */
+.pricing-header {
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* Se va a dar estilo, y espacio en parte superior e inferior y nada en los lados en los <li> de cada bloque: */
+.pricing-features {
+    margin: 50px 0 25px;
+    color: rgb(232, 102, 42);
+}
+
+/* Se proporciona estilo a los elementos individuales de dentro de pricing-features: */
+.pricing-features-item {
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px 0;
+    border-top: 1px solid rgb(228, 169, 141);
+}
+.pricing-features-item:last-child{
+    border-bottom: 1px solid rgb(228, 169, 141);
+}
+
+/* Se da estilo al texto pricing-price con el texto "Free" y se pretende configurar pantalla para que sea un bloque: */
+.pricing-price {
+    color: rgb(232, 102, 42);
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+
+}
+
+/* Se configura el estilo de la etiqueta de anclaje de los botones: */
+.pricing-button {
+    border: 1px solid rgb(179, 216, 219);
+    border-radius: 10px;
+    color: rgb(146, 210, 215);
+    display: inline-block;
+    padding: 15px 35px;
+    text-decoration: none;
+    margin: 25px 0;
+    transition: background-color 200ms ease-in-out; /* tiempo establecido  para el cambio de background-colo, cuando el ratón está dentro del botón y fuera */
+}
+
+/* Se proporciona un efecto (hover) para que cuando mi puntero esta encima del botón, el background-color cambia de color. */
+.pricing-button:hover, .pricing-button:focus{
+    background-color: rgb(213, 234, 236);
+}
+
+/* Se proporciona estilo diferente al botón medio ya que tiene una clase diferente.
+También le daremos efecto hover y focus: */
+.pricing-button.is-featured {
+    background-color: rgb(146, 210, 215);
+    color:white;
+}
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus{
+    background-color: rgb(56, 61, 223);
+    color:white;
+}
+
+/* Para hacer este proyecto responsivo:
+- Se establece que cuando el tamaño es menor a 900px, el diseño se establece en fila.
+- Se va a eliminar el borde inferior de cada bloque.
+- Se añade un borde al lado derecho de cad bloque como línea divisoria.
+- Se elimina el borde divisorio derecho del último bloque. */
+@media (min-width: 900px){ 
+    .panel {
+        flex-direction:row;
+    }
+    .pricing-plan {
+        border-bottom: none;
+        border-right: 1px solid rgb(228, 169, 141);
+        padding: 25px 50px;
+    }
+    .pricing-plan:last child {
+        border-right: none;
+    }
+}
